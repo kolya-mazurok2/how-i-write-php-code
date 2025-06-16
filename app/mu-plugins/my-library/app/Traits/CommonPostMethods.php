@@ -3,7 +3,7 @@
 namespace MyLibrary\Traits;
 
 use MyLibrary\Helpers\ThumbnailHelper;
-use MyLibrary\Models\PostTypes\BlogCpt;
+use MyLibrary\Models\PostTypes\PostCpt;
 use MyLibrary\Models\Taxonomies\TypeTaxonomy;
 
 trait CommonPostMethods
@@ -62,7 +62,7 @@ trait CommonPostMethods
             return $this->type;
         }
 
-        if ($this->post->post_type === BlogCpt::TYPE || $this->post->post_type === PostCpt::TYPE) {
+        if ($this->post->post_type === PostCpt::TYPE) {
             $this->type = $this->post->post_type;
           
             return $this->type;
