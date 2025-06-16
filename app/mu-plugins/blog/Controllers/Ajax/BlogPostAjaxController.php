@@ -3,7 +3,7 @@
 namespace Blog\Controllers\Ajax;
 
 use MyLibrary\Controllers\Ajax\CommomAjaxController;
-use MyLibrary\Interfaces\CommonPostResource;
+use MyLibrary\Interfaces\CommonPostService;
 use Blog\Controllers\BlogPostController;
 use Blog\Services\BlogPostService;
 
@@ -11,9 +11,10 @@ class BlogPostAjaxController extends CommomAjaxController
 {
     public const POSTS_PER_PAGE_MOBILE = 6;
     public const POSTS_PER_PAGE_DESKTOP = 9;
-    protected ?CommonPostResource $blogPostService;
+    
+    protected ?CommonPostService $blogPostService;
 
-    public function __construct(?CommonPostResource $blogPostService = null)
+    public function __construct(?CommonPostService $blogPostService = null)
     {
         parent::__construct();
       
